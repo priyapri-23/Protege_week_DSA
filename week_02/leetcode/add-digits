@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int addDigits(int num) {
+        int ans=0;
+        while(num){
+            ans += num%10;// 23 % 10 = 3 => ans=3
+            num /= 10; //num=23/10 => num=2.3
+        }
+          if(ans<10)
+            return ans;
+        else
+            return addDigits(ans);//repeating funcn again
+    }
+    
+};
